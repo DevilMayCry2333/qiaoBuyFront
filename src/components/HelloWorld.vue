@@ -31,6 +31,8 @@
 </template>
 
 <script>
+const config = require('../config/conf.js');
+
 export default {
   name: 'HelloWorld',
   props: {
