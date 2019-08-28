@@ -1,23 +1,22 @@
 <template>
+<div>
 <el-carousel indicator-position="outside">
     <el-carousel-item v-for="item in 4" :key="item">
       <h3>{{ item }}</h3>
     </el-carousel-item>
 
-        <div class="demo-image__placeholder">
-  <div class="demo-image">
-  <div class="block" v-for="fit in fits" :key="fit">
-    <span class="demonstration">{{ fit }}</span>
-    <el-image
-      style="width: 100px; height: 100px"
-      :src="url"
-      :fit="fit"></el-image>
-  </div>
-</div>
-</div>
-
   </el-carousel>
 
+  <div class="demo-image">
+    <div class="block" v-for="fit in fits3" :key="fit">
+      <span class="demonstration">{{ fit.way }}</span>
+      <el-image
+        style="width: 167%;"
+        :src="fit.src"
+        :fit="fit.way"></el-image>
+    </div>
+  </div>
+</div>
 
 </template>
 
@@ -26,10 +25,29 @@ import Vue from 'vue'
 const config = require('../config/conf.js');
 export default {
   name:'Home',
+  methods:{
+    test(){
+      console.log("Test");
+    }
+  },
     data() {
       return {
         fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
-        url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'
+         fits2: ['fill', 'fill', 'fill', 'fill', 'fill'],
+         fits3:[
+           {
+             way:'fill',
+             src:'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
+           },
+           {
+             way:'fill',
+             src:'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
+           }
+
+         ],
+        fit:'cover',
+        url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+         src: 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'
       }
     }
   }
@@ -51,9 +69,8 @@ export default {
   .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
-  .block{
-      margin-top: 50%;
-      
-  }
+  /* .demo-image__placeholder{
+    margin-top: 5%
+  } */
 
 </style>
