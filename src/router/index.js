@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Test from '@/components/Test'
-
+import Home from '@/components/Home'
+import Detail from '@/components/Detail'
 Vue.use(Router)
 
 export default new Router({
@@ -9,11 +9,13 @@ export default new Router({
         {
             path: '/',
             name: 'Home',
-            component: Test,
-        }
-
-
-
+            component: Home,
+        },
+        {
+            path: '/Detail',
+            name: 'Detail',
+            component: Detail,
+        },
     ],
     linkActiveClass: "active-router",
     linkExactActiveClass: "exact-router"
