@@ -1,37 +1,37 @@
 <template>
-    <div>
-  <div class="demo-image">
-   <div>
-         <p>商品详情</p>
-    </div>
-    <el-image
-      style="width: 70%; height: 70%"
-      :src="url"
-      :fit="fit"></el-image>
-</div>
-<div>
-    <el-radio-group v-model="radio1">
-      <el-radio-button label="蓝色"></el-radio-button>
-      <el-radio-button label="红色"></el-radio-button>
-      <el-radio-button label="白色"></el-radio-button>
-      <el-radio-button label="紫色"></el-radio-button>
-    </el-radio-group>
+  <div class="test">
+    <div class="demo-image">
+        <div>
+              <p>商品详情</p>
+          </div>
+          <el-image
+            style="width: 70%; height: 70%"
+            :src="url"
+            :fit="fit"></el-image>
+      </div>
+      <div>
+          <el-radio-group v-model="radio1">
+            <el-radio-button label="蓝色"></el-radio-button>
+            <el-radio-button label="红色"></el-radio-button>
+            <el-radio-button label="白色"></el-radio-button>
+            <el-radio-button label="紫色"></el-radio-button>
+          </el-radio-group>
+        </div>
+        <div>
+            <el-select v-model="value" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+        </div>
+        <div>
+            <el-input v-model="input" placeholder="请输入数量"></el-input>
+        </div>
+        <el-button type="primary">购买</el-button>
   </div>
-  <div>
-      <el-select v-model="value" placeholder="请选择">
-    <el-option
-      v-for="item in options"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value">
-    </el-option>
-  </el-select>
-  </div>
-  <div>
-      <el-input v-model="input" placeholder="请输入数量"></el-input>
-  </div>
-  <el-button type="primary" disabled>购买</el-button>
-    </div>
    
 </template>
 
@@ -70,8 +70,12 @@ export default Vue.extend({
 </script>
 <style>
 .demo-image{
-    width: 60%;
+    width: 100%;
     height: 60%;
+    /* margin-left: 15% */
+}
+.test{
+margin-left: 20%
 }
 
 </style>
