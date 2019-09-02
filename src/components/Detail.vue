@@ -60,7 +60,7 @@ export default Vue.extend({
                         that.$nextTick(function () {
 
                         that.$message({
-                            message: '恭喜你，这是一条成功消息',
+                            message: '商品详情拉取成功',
                             type: 'success'
                         });
                         console.log(resp.data);
@@ -108,9 +108,10 @@ export default Vue.extend({
                 }).then(function(resp){
                         that.$nextTick(function () {
                         that.$message({
-                            message: '恭喜你，这是一条成功消息',
+                            message: '下单成功! 😊',
                             type: 'success'
                         });
+                        that.$router.push('/');
                         console.log(resp.data);
                         })
             })
