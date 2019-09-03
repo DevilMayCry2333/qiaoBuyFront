@@ -69,7 +69,7 @@ export default {
             message: '您未登录，请登录',
             type: 'fail'
         });
-      this.$router.push('/');
+      this.$router.push('/Login');
     }
                 axios({
                         method:'post',
